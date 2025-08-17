@@ -221,7 +221,7 @@
             stroke-dashoffset: -32.42;
         }
 
-        /* Hero Section */
+        /* Updated Hero Section with improved spacing */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -230,6 +230,9 @@
             position: relative;
             overflow: hidden;
             z-index: 1;
+            /* Added padding for top, left, right spacing */
+            padding: 120px 2rem 5rem 2rem;
+            /* top, right, bottom, left */
         }
 
         .hero::before {
@@ -248,13 +251,16 @@
         .hero-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 0;
+            /* Remove padding from container as hero now has padding */
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
             align-items: center;
             position: relative;
             z-index: 1;
+            width: 100%;
+            /* Ensure full width within hero padding */
         }
 
         .hero-content h1 {
@@ -840,6 +846,15 @@
 
         /* Large Desktop (1440px and above) */
         @media (min-width: 1440px) {
+            .hero {
+                padding: 140px 3rem 5rem 3rem;
+                /* Increased spacing for large screens */
+            }
+
+            .hero-container {
+                max-width: 1400px;
+            }
+
             .container {
                 max-width: 1400px;
             }
@@ -860,6 +875,14 @@
 
         /* Desktop (1024px - 1439px) */
         @media (max-width: 1439px) {
+            .hero {
+                padding: 120px 2.5rem 5rem 2.5rem;
+            }
+
+            .hero-container {
+                max-width: 1200px;
+            }
+
             .container {
                 max-width: 1200px;
             }
@@ -872,12 +895,17 @@
 
         /* Tablet Landscape (768px - 1023px) */
         @media (max-width: 1023px) {
-            .container {
-                padding: 0 1.5rem;
+
+            .hero {
+                padding: 110px 2rem 4rem 2rem;
             }
 
             .hero-container {
                 gap: 3rem;
+            }
+
+            .container {
+                padding: 0 1.5rem;
             }
 
             .hero-content h1 {
@@ -903,6 +931,10 @@
 
         /* Tablet Portrait (768px - 1023px) */
         @media (max-width: 1023px) and (orientation: portrait) {
+            .hero {
+                padding: 100px 1.5rem 4rem 1.5rem;
+            }
+
             .hero-container {
                 grid-template-columns: 1fr;
                 text-align: center;
@@ -989,11 +1021,15 @@
                 transform: rotate(90deg);
             }
 
+            .hero {
+                padding: 100px 1.5rem 4rem 1.5rem;
+                /* Good spacing for mobile large */
+            }
+
             .hero-container {
                 grid-template-columns: 1fr;
                 text-align: center;
                 gap: 2rem;
-                padding: 2rem 0;
             }
 
             .hero-content h1 {
@@ -1147,6 +1183,11 @@
                 padding: 3rem 1.5rem 2rem 1.5rem;
             }
 
+            .hero {
+                padding: 90px 1.25rem 3rem 1.25rem;
+                /* Comfortable spacing */
+            }
+
             .hero-content h1 {
                 font-size: 2.2rem;
             }
@@ -1230,6 +1271,11 @@
                 right: -260px;
             }
 
+            .hero {
+                padding: 90px 1rem 3rem 1rem;
+                /* Adequate spacing for small screens */
+            }
+
             .hero-content h1 {
                 font-size: 2rem;
             }
@@ -1282,6 +1328,11 @@
                 right: -240px;
             }
 
+            .hero {
+                padding: 85px 0.75rem 3rem 0.75rem;
+                /* Minimal but visible spacing */
+            }
+
             .hero-content h1 {
                 font-size: 1.8rem;
             }
@@ -1305,7 +1356,8 @@
         @media (max-height: 500px) and (orientation: landscape) {
             .hero {
                 min-height: 100vh;
-                padding: 2rem 0;
+                padding: 80px 2rem 2rem 2rem;
+                /* Reduced top padding for landscape */
             }
 
             .hero-container {
@@ -1324,6 +1376,12 @@
 
             section {
                 padding: 3rem 0;
+            }
+        }
+
+        @media (max-height: 400px) and (orientation: landscape) {
+            .hero {
+                padding: 70px 1.5rem 1.5rem 1.5rem;
             }
         }
 
