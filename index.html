@@ -272,6 +272,8 @@
             color: #6366f1;
             font-weight: 600;
             margin-bottom: 0.5rem;
+            display: block;
+            width: 100%;
         }
 
         .hero-content p {
@@ -380,20 +382,15 @@
         section:not(.hero) {
             scroll-margin-top: 120px;
             background: white;
-            /* Ensure sections have background */
         }
 
         /* Additional spacing to prevent content from being hidden under navbar and hero */
         #about {
             padding-top: 8rem;
-            /* Increased padding to create more space */
             margin-top: 0;
-            /* Remove any negative margins */
             position: relative;
             z-index: 10;
-            /* Higher z-index to ensure it's above hero */
             background: white;
-            /* Solid background */
         }
 
         .container {
@@ -522,7 +519,6 @@
         .services-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            /* Fixed 3 columns */
             gap: 2rem;
             position: relative;
             z-index: 1;
@@ -738,7 +734,6 @@
 
         .form-group textarea {
             resize: none;
-            /* Disable textarea resizing */
         }
 
         .form-group input:focus,
@@ -890,7 +885,6 @@
 
             .services-grid {
                 grid-template-columns: repeat(2, 1fr);
-                /* 2 columns on tablet */
                 gap: 1.5rem;
             }
 
@@ -913,7 +907,7 @@
             }
         }
 
-        /* Mobile Large (481px - 767px) */
+        /* Mobile and Small Tablet (up to 767px) */
         @media (max-width: 767px) {
             .hamburger {
                 display: block;
@@ -992,7 +986,7 @@
                 grid-template-columns: 1fr;
                 text-align: center;
                 gap: 2rem;
-                padding: 2rem 0;
+                padding-top: 2rem;
             }
 
             .hero-content h1 {
@@ -1001,11 +995,19 @@
             }
 
             .hero-content .subtitle {
-                font-size: 1rem;
+                font-size: 1.1rem;
+                margin-bottom: 1rem;
+                display: block !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+                color: #6366f1 !important;
+                font-weight: 600 !important;
+                text-align: center;
             }
 
             .hero-content p {
                 font-size: 1rem;
+                margin-bottom: 2rem;
             }
 
             .profile-card {
@@ -1045,7 +1047,6 @@
 
             .services-grid {
                 grid-template-columns: 1fr;
-                /* Single column on mobile */
                 gap: 1.5rem;
             }
 
@@ -1140,18 +1141,42 @@
                 padding: 0 1rem;
             }
 
+            .nav-container {
+                padding: 0 1rem;
+            }
+
             .nav-menu {
                 width: 280px;
                 right: -280px;
                 padding: 3rem 1.5rem 2rem 1.5rem;
             }
 
+            .hero {
+                padding: 2rem 0;
+                min-height: 100vh;
+            }
+
+            .hero-container {
+                padding-top: 1rem;
+                gap: 1.5rem;
+            }
+
             .hero-content h1 {
                 font-size: 2.2rem;
+                line-height: 1.2;
             }
 
             .hero-content .subtitle {
-                font-size: 0.95rem;
+                font-size: 1rem;
+                margin-bottom: 1rem;
+                display: block;
+                clear: both;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+                margin-bottom: 2rem;
+                line-height: 1.5;
             }
 
             .profile-img {
@@ -1224,13 +1249,39 @@
                 padding: 0 0.75rem;
             }
 
+            .nav-container {
+                padding: 0 0.75rem;
+            }
+
             .nav-menu {
                 width: 260px;
                 right: -260px;
             }
 
+            .hero {
+                padding: 1.5rem 0;
+            }
+
+            .hero-container {
+                padding-top: 0.5rem;
+                gap: 1rem;
+            }
+
             .hero-content h1 {
                 font-size: 2rem;
+                line-height: 1.2;
+            }
+
+            .hero-content .subtitle {
+                font-size: 0.95rem;
+                margin-bottom: 1rem;
+                display: block;
+                text-align: center;
+            }
+
+            .hero-content p {
+                font-size: 0.95rem;
+                line-height: 1.5;
             }
 
             .profile-img {
@@ -1268,11 +1319,20 @@
                 width: 40px;
                 height: 40px;
             }
+
+            .service-card,
+            .project-card {
+                padding: 1rem;
+            }
         }
 
         /* Extra Small Mobile (below 320px) */
         @media (max-width: 319px) {
             .container {
+                padding: 0 0.5rem;
+            }
+
+            .nav-container {
                 padding: 0 0.5rem;
             }
 
@@ -1283,6 +1343,11 @@
 
             .hero-content h1 {
                 font-size: 1.8rem;
+            }
+
+            .hero-content .subtitle {
+                font-size: 0.9rem;
+                margin-bottom: 0.75rem;
             }
 
             .hero-content p {
@@ -1310,10 +1375,16 @@
             .hero-container {
                 grid-template-columns: 1fr 1fr;
                 gap: 2rem;
+                padding-top: 1rem;
             }
 
             .hero-content h1 {
                 font-size: 2rem;
+            }
+
+            .hero-content .subtitle {
+                font-size: 1rem;
+                margin-bottom: 0.5rem;
             }
 
             .profile-img {
@@ -1353,6 +1424,85 @@
 
             .social-link:hover {
                 transform: none;
+            }
+        }
+
+        /* Additional Mobile Fixes for Hero Section */
+        @media (max-width: 767px) {
+            .hero-content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                width: 100%;
+            }
+
+            .hero-content .subtitle {
+                order: 1;
+                margin-bottom: 1rem;
+                font-size: 1.1rem;
+                width: 100%;
+                display: block !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+                clear: both;
+                color: #6366f1 !important;
+                font-weight: 600 !important;
+                text-align: center;
+            }
+
+            .hero-content h1 {
+                order: 2;
+                margin-bottom: 1.5rem;
+                width: 100%;
+            }
+
+            .hero-content p {
+                order: 3;
+                margin-bottom: 2rem;
+                width: 100%;
+                max-width: none;
+            }
+
+            .cta-buttons {
+                order: 4;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content .subtitle {
+                font-size: 1rem !important;
+                margin-bottom: 1rem;
+                display: block !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+                color: #6366f1 !important;
+                font-weight: 600 !important;
+            }
+        }
+
+        @media (max-width: 374px) {
+            .hero-content .subtitle {
+                font-size: 0.95rem !important;
+                margin-bottom: 1rem;
+                display: block !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+                color: #6366f1 !important;
+                font-weight: 600 !important;
+            }
+        }
+
+        @media (max-width: 319px) {
+            .hero-content .subtitle {
+                font-size: 0.9rem !important;
+                margin-bottom: 1rem;
+                display: block !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+                color: #6366f1 !important;
+                font-weight: 600 !important;
             }
         }
     </style>
