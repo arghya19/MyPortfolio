@@ -267,6 +267,7 @@
             background-clip: text;
         }
 
+        /* FIXED: Subtitle styling - removed all problematic mobile overrides */
         .hero-content .subtitle {
             font-size: 1.2rem;
             color: #6366f1;
@@ -994,14 +995,13 @@
                 line-height: 1.2;
             }
 
+            /* FIXED: Mobile subtitle styling - clean and simple */
             .hero-content .subtitle {
                 font-size: 1.1rem;
+                color: #6366f1;
+                font-weight: 600;
                 margin-bottom: 1rem;
-                display: block !important;
-                visibility: visible !important;
-                opacity: 1 !important;
-                color: #6366f1 !important;
-                font-weight: 600 !important;
+                display: block;
                 text-align: center;
             }
 
@@ -1166,11 +1166,14 @@
                 line-height: 1.2;
             }
 
+            /* FIXED: Simplified mobile subtitle */
             .hero-content .subtitle {
                 font-size: 1rem;
+                color: #6366f1;
+                font-weight: 600;
                 margin-bottom: 1rem;
                 display: block;
-                clear: both;
+                text-align: center;
             }
 
             .hero-content p {
@@ -1272,8 +1275,11 @@
                 line-height: 1.2;
             }
 
+            /* FIXED: Extra small mobile subtitle */
             .hero-content .subtitle {
                 font-size: 0.95rem;
+                color: #6366f1;
+                font-weight: 600;
                 margin-bottom: 1rem;
                 display: block;
                 text-align: center;
@@ -1345,9 +1351,14 @@
                 font-size: 1.8rem;
             }
 
+            /* FIXED: Ultra small mobile subtitle */
             .hero-content .subtitle {
                 font-size: 0.9rem;
+                color: #6366f1;
+                font-weight: 600;
                 margin-bottom: 0.75rem;
+                display: block;
+                text-align: center;
             }
 
             .hero-content p {
@@ -1424,85 +1435,6 @@
 
             .social-link:hover {
                 transform: none;
-            }
-        }
-
-        /* Additional Mobile Fixes for Hero Section */
-        @media (max-width: 767px) {
-            .hero-content {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-                width: 100%;
-            }
-
-            .hero-content .subtitle {
-                order: 1;
-                margin-bottom: 1rem;
-                font-size: 1.1rem;
-                width: 100%;
-                display: block !important;
-                visibility: visible !important;
-                opacity: 1 !important;
-                clear: both;
-                color: #6366f1 !important;
-                font-weight: 600 !important;
-                text-align: center;
-            }
-
-            .hero-content h1 {
-                order: 2;
-                margin-bottom: 1.5rem;
-                width: 100%;
-            }
-
-            .hero-content p {
-                order: 3;
-                margin-bottom: 2rem;
-                width: 100%;
-                max-width: none;
-            }
-
-            .cta-buttons {
-                order: 4;
-                width: 100%;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero-content .subtitle {
-                font-size: 1rem !important;
-                margin-bottom: 1rem;
-                display: block !important;
-                visibility: visible !important;
-                opacity: 1 !important;
-                color: #6366f1 !important;
-                font-weight: 600 !important;
-            }
-        }
-
-        @media (max-width: 374px) {
-            .hero-content .subtitle {
-                font-size: 0.95rem !important;
-                margin-bottom: 1rem;
-                display: block !important;
-                visibility: visible !important;
-                opacity: 1 !important;
-                color: #6366f1 !important;
-                font-weight: 600 !important;
-            }
-        }
-
-        @media (max-width: 319px) {
-            .hero-content .subtitle {
-                font-size: 0.9rem !important;
-                margin-bottom: 1rem;
-                display: block !important;
-                visibility: visible !important;
-                opacity: 1 !important;
-                color: #6366f1 !important;
-                font-weight: 600 !important;
             }
         }
     </style>
@@ -2152,3 +2084,4 @@
 </body>
 
 </html>
+
